@@ -51,6 +51,8 @@ RUN apt-get update && \
     && echo ${WKHTMLTOPDF_SHA} wkhtmltox.deb | sha1sum -c - \
     && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
     && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
+    &&a pt-get update && apt-get -y install --no-install-recommends ./odoo.deb 
+    && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # install latest postgresql-client
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
